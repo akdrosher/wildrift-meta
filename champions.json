@@ -1,0 +1,41 @@
+[
+  {
+    "name": "Ahri",
+    "role": "Mid",
+    "tier": "S",
+    "icon": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Ahri_0.jpg",
+    "abilities": [
+      "Pasiva: Cura al golpear habilidades",
+      "Q: Orbe daño ida y vuelta",
+      "W: Fuego automático",
+      "E: Encanto",
+      "R: Dash múltiple"
+    ],
+    "build": [
+      "Luden",
+      "Rabadon",
+      "Void Staff"
+    ],
+    "runes": ["Electrocutar", "Brutal"],
+    "counters": ["Zed", "Fizz"]
+  },
+  {
+    "name": "Zed",
+    "role": "Mid",
+    "tier": "S",
+    "icon": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Zed_0.jpg",
+    "abilities": [
+      "Q: Shuriken",
+      "W: Sombra",
+      "E: Giro",
+      "R: Marca de muerte"
+    ],
+    "build": [
+      "Youmuu",
+      "Duskblade",
+      "Edge of Night"
+    ],
+    "runes": ["Electrocutar"],
+    "counters": ["Galio", "Malphite"]
+  }
+]
