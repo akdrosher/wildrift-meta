@@ -81,106 +81,14 @@ ul{margin:0;padding-left:18px}
 <script>
 // ================== DATA (separado y escalable) ==================
 // Puedes mover esto a champions.json más adelante sin cambiar la UI
-const champions = [
-  {
-    name: "Ahri",
-    role: "Mid",
-    tier: "S",
-    icon: "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Ahri_0.jpg",
-    abilities: [
-      "Pasiva – Robo de esencia: Cura al impactar habilidades.",
-      "Q – Orbe del engaño: Daño de ida y vuelta (mágico/verdadero).",
-      "W – Fuego zorruno: Proyectiles automáticos a objetivos cercanos.",
-      "E – Encanto: Controla al enemigo y aumenta el daño recibido.",
-      "R – Impulso espiritual: Múltiples desplazamientos con daño."
-    ],
-    build: [
-      "Eco de Luden → Orbe del Infinito → Sombrero de Rabadon",
-      "Bastón del Vacío (vs MR) / Morellonomicón (vs curaciones)",
-      "Botas de Hechicero + Encantamiento Estasis"
-    ],
-    runes: ["Electrocutar","Brutal","Cazador – Genio","Cazador – Vampirismo"],
-    counters: ["Zed","Fizz","Kassadin"]
-  },
-  {
-    name: "Garen",
-    role: "Top",
-    tier: "A",
-    icon: "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Garen_0.jpg",
-    abilities: [
-      "Pasiva – Perseverancia: Regeneración fuera de combate.",
-      "Q – Golpe decisivo: Silencio + velocidad.",
-      "W – Coraje: Tenacidad y escudo.",
-      "E – Juicio: Giro de daño en área.",
-      "R – Justicia demaciana: Ejecución."
-    ],
-    build: [
-      "Fuerza de la Trinidad → Danza de la Muerte → Sterak",
-      "Placa del Hombre Muerto / Fuerza de la Naturaleza",
-      "Botas Blindadas + Encantamiento Estasis"
-    ],
-    runes: ["Conquistador","Triunfo","Cazador – Titán","Demolición"],
-    counters: ["Darius","Fiora","Camille"]
-  },
-  {
-    name: "Lee Sin",
-    role: "Jungle",
-    tier: "S",
-    icon: "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/LeeSin_0.jpg",
-    abilities: [
-      "Q – Onda sónica/Resonancia: Marca y reposiciona.",
-      "W – Salvaguarda: Escudo y salto a aliado/ward.",
-      "E – Tempestad/Mutilar: Daño y ralentiza.",
-      "R – Ira del dragón: Patada que desplaza."
-    ],
-    build: [
-      "Cuchilla Negra → Danza de la Muerte → Ángel Guardián",
-      "Recordatorio Letal (vs armadura)",
-      "Botas Jonias + Encantamiento Estasis"
-    ],
-    runes: ["Conquistador","Cazador – Vampirismo","Cazador – Titán","Genio"],
-    counters: ["Rammus","Amumu","Vi"]
-  },
-  {
-    name: "Jinx",
-    role: "ADC",
-    tier: "A",
-    icon: "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Jinx_0.jpg",
-    abilities: [
-      "Q – Cambiapistolas: Minigun/cohetes.",
-      "W – ¡Zap!: Disparo de largo alcance.",
-      "E – Mordiscos: Trampas.",
-      "R – Supermegacohete: Global."
-    ],
-    build: [
-      "Filo Infinito → Huracán de Runaan → Sanguinaria",
-      "Recordatorio Letal / Cañón de Fuego Rápido",
-      "Botas Grebas + Encantamiento Estasis"
-    ],
-    runes: ["Compás Letal","Cazador – Vampirismo","Cazador – Genio","Cazador – Titán"],
-    counters: ["Zed","Kha'Zix","Rengar"]
-  },
-  {
-    name: "Thresh",
-    role: "Support",
-    tier: "S",
-    icon: "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Thresh_0.jpg",
-    abilities: [
-      "Q – Sentencia de muerte: Gancho.",
-      "W – Linterna: Escudo/teletransporte aliado.",
-      "E – Despellejar: Empuja/atrae.",
-      "R – La caja: Muros de daño y ralentización."
-    ],
-    build: [
-      "Convergencia de Zeke → Protector del Juramento → Coraza del Muerto",
-      "Promesa del Caballero / Warmog",
-      "Botas de Movilidad + Encantamiento Redención"
-    ],
-    runes: ["Réplicas","Lealtad","Hueso Revestido","Genio"],
-    counters: ["Morgana","Lux","Karma"]
-  }
-];
+let champions = [];
 
+fetch('champions.json')
+  .then(res => res.json())
+  .then(data => {
+    champions = data;
+    render(champions);
+  });
 // ================== UI ==================
 const container = document.getElementById('champions');
 
